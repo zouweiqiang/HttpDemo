@@ -18,6 +18,8 @@ import com.nd.frt.fragmentdemo.model.UserInfo;
 import com.nd.frt.fragmentdemo.viewholder.UserViewHolder;
 
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
 
@@ -37,7 +39,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
         Log.d(TAG, "onCreateViewHolder");
         return new UserViewHolder(inflate);
     }
-
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder userViewHolder, @SuppressLint("RecyclerView") final int position) {
         Log.d(TAG, "onBindViewHolder");
@@ -48,9 +49,15 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
         userViewHolder.mIvAvatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(), v.getContext().getString(R.string.hello), Toast.LENGTH_LONG).show();
+              Toast.makeText(v.getContext(), v.getContext().getString(R.string.hello), Toast.LENGTH_SHORT).show();
             }
+
+            private void showMyToast(Toast toast, int i) {
+
+            }
+
         });
+
         userViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
